@@ -1,0 +1,702 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1e82ec7d-2bab-807a-9425-cb70fb46759e" class="page sans"><header><img class="page-cover-image" src="Colorful_Photo_Rainbow_Facebook_Cover.png" style="object-position:center 34.17%"/><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="1e92ec7d-2bab-80bb-b175-df46cdb60ca8" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>செய்திதுறையைஅறிய</mtext><mn>25</mn><mtext>இணையதளங்கள்</mtext><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">செய்தி துறையை அறிய 25 இணையதளங்கள்!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord brahmic_fallback">செய்திதுறையைஅறிய</span><span class="mord">25</span><span class="mord brahmic_fallback">இணையதளங்கள்</span><span class="mclose">!</span></span></span></span></span></div></figure><p id="1e92ec7d-2bab-8076-92a7-e1383d22a3f2" class="">
+</p><p id="1e92ec7d-2bab-8014-b0fc-cb52b4622496" class="">இதழியல் துறையில் ஆர்வம் உள்ளவர்கள் செய்திகளை பின் தொடரவும் கூடுதல் தகவல்களை தெரிந்து கொள்ளவும் உதவும் இணையதளங்களின் பட்டியல்:</p><p id="1e92ec7d-2bab-8074-af8b-e9889030c91a" class="">
+</p><p id="1e92ec7d-2bab-80f0-86c8-c4ce68f81dc0" class=""><strong>செய்தி</strong></p><ul id="1e92ec7d-2bab-80de-bdb9-d54b1a037ed9" class="bulleted-list"><li style="list-style-type:disc">பிபிசி – </li></ul><figure id="1e92ec7d-2bab-8072-ae06-d5413573a645"><a href="https://www.bbc.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BBC Home - Breaking News, World News, US News, Sports, Business, Innovation, Climate, Culture, Travel, Video &amp; Audio</div><div class="bookmark-description">Visit BBC for trusted reporting on the latest world and US news, sports, business, climate, innovation, culture and much more.</div></div><div class="bookmark-href"><img src="https://static.files.bbci.co.uk/bbcdotcom/web/20250409-091508-0ef9b7676-web-2.19.1-12/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.bbc.com/</div></div></a></figure><ul id="1e92ec7d-2bab-80d1-8e63-e88375dc0f15" class="bulleted-list"><li style="list-style-type:disc">கார்டியன்- </li></ul><figure id="1e92ec7d-2bab-800c-b01e-cd89655d4a57"><a href="https://www.theguardian.com/international" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Latest news, sport and opinion from the Guardian</div><div class="bookmark-description">Latest international news, sport and comment from the Guardian</div></div><div class="bookmark-href"><img src="https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-512.png" class="icon bookmark-icon"/>https://www.theguardian.com/international</div></div></a></figure><ul id="1e92ec7d-2bab-80ef-bc05-e28cd33a211e" class="bulleted-list"><li style="list-style-type:disc">பஸ்ஃபீட்- </li></ul><figure id="1e92ec7d-2bab-8083-b83b-e714e8eceb78"><a href="https://www.buzzfeed.com/in" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BuzzFeed</div><div class="bookmark-description">BuzzFeed has breaking news, vital journalism, quizzes, videos, celeb news, Tasty food videos, recipes, DIY hacks, and all the trending buzz you’ll want to share with your friends. Copyright BuzzFeed, Inc. All rights reserved.</div></div><div class="bookmark-href"><img src="https://www.buzzfeed.com/static-assets/img/touch-icon-android.6f90f349a263fafae3843e9decf2812a.png" class="icon bookmark-icon"/>https://www.buzzfeed.com/in</div></div><img src="https://www.buzzfeed.com/static-assets/img/buzzfeed_arrow.e86a786d9e5e2250e1ed3e0ec95ba42d.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-802f-95f7-f51aa3230003" class="bulleted-list"><li style="list-style-type:disc">ஹேக்கர் நியூஸ் - </li></ul><figure id="1e92ec7d-2bab-80b9-b7e1-dc09f368707d"><a href="https://news.ycombinator.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Hacker News</div></div><div class="bookmark-href"><img src="https://news.ycombinator.com/y18.svg" class="icon bookmark-icon"/>https://news.ycombinator.com/</div></div></a></figure><ul id="1e92ec7d-2bab-80ef-8401-c21b89f89bce" class="bulleted-list"><li style="list-style-type:disc"><del>பிட் ஆப் நியூஸ் </del></li></ul><hr id="1e92ec7d-2bab-80e6-b8d2-cadc28c86611"/><p id="1e92ec7d-2bab-807a-afe4-cb6ed0bd52f2" class="">
+</p><p id="1e92ec7d-2bab-8093-8a48-fa6b3b5efbf6" class=""><strong>ஆய்வு</strong></p><ul id="1e92ec7d-2bab-8034-a6e0-ef218114abd5" class="bulleted-list"><li style="list-style-type:disc">குவோரா -  </li></ul><figure id="1e92ec7d-2bab-80c9-9f0d-de4f69d96b13"><a href="https://www.quora.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Quora</div><div class="bookmark-description">Quora is a place to gain and share knowledge. It&amp;#039;s a platform to ask questions and connect with people who contribute unique insights and quality answers. This empowers people to learn from each other and to better understand the world.</div></div><div class="bookmark-href"><img src="https://qsf.cf2.quoracdn.net/-4-images.favicon-new.ico-26-07ecf7cd341b6919.ico" class="icon bookmark-icon"/>https://www.quora.com/</div></div><img src="https://qsf.cf2.quoracdn.net/-4-images.share_default_image.png-26-2f12660e125b218f.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-80ba-b70a-f48ece96f67d" class="bulleted-list"><li style="list-style-type:disc">டக்டக்கோ - </li></ul><figure id="1e92ec7d-2bab-800e-bf75-d7f38edc383e"><a href="https://duckduckgo.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DuckDuckGo - Protection. Privacy. Peace of mind.</div><div class="bookmark-description">The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</div></div><div class="bookmark-href"><img src="https://duckduckgo.com/static-assets/favicons/DDG-iOS-icon_152x152.png" class="icon bookmark-icon"/>https://duckduckgo.com/</div></div><img src="https://duckduckgo.com/assets/logo_social-media.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-80b9-aa04-f31c21be68b4" class="bulleted-list"><li style="list-style-type:disc">வேபேக்மிஷின் - </li></ul><figure id="1e92ec7d-2bab-80c7-8e52-db389df9776b"><a href="http://web.archive.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wayback Machine</div><div class="bookmark-description">Search the history of over 928 billion
+          web pages
+          on the Internet.</div></div><div class="bookmark-href"><img src="https://web-static.archive.org/_static/images/archive.ico" class="icon bookmark-icon"/>http://web.archive.org/</div></div></a></figure><ul id="1e92ec7d-2bab-80b7-8548-daa91ffc5424" class="bulleted-list"><li style="list-style-type:disc">ரெட்டிட் – </li></ul><figure id="1e92ec7d-2bab-804b-8403-e025173aa22e"><a href="https://www.reddit.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">reddit</div><div class="bookmark-description">Reddit is where millions of people gather for conversations about the things they care about, in over 100,000 subreddit communities.</div></div><div class="bookmark-href"><img src="https://www.redditstatic.com/shreddit/assets/favicon/192x192.png" class="icon bookmark-icon"/>https://www.reddit.com/</div></div><img src="https://www.redditstatic.com/shreddit/assets/favicon/192x192.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-80cf-b478-dbd622f88987" class="bulleted-list"><li style="list-style-type:disc">சிமிலர் சைட்ஸ் - </li></ul><figure id="1e92ec7d-2bab-803a-a6f1-f2c410a2252c"><a href="https://www.similarsites.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Similarsites.com - Easily Explore alternative websites</div><div class="bookmark-description">Discover the best websites and explore competitor and related sites with Similarsites.com, the extension that enables you to browse associated content.</div></div><div class="bookmark-href"><img src="https://www.similarsites.com/static/favicon.png" class="icon bookmark-icon"/>https://www.similarsites.com/</div></div></a></figure><hr id="1e92ec7d-2bab-80c3-9497-eb4a0d860871"/><p id="1e92ec7d-2bab-8041-b47f-d69dda3baa64" class="">
+</p><p id="1e92ec7d-2bab-80d2-926e-cdd4be143ca1" class=""><strong>கருவிகள்</strong></p><ul id="1e92ec7d-2bab-80db-8fb2-c77820463635" class="bulleted-list"><li style="list-style-type:disc">பாக்கெட் - </li></ul><figure id="1e92ec7d-2bab-8038-8d65-d461e98b0db2"><a href="https://getpocket.com/home" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pocket</div></div><div class="bookmark-href"><img src="https://getpocket.com/i/apple-touch-icon/Pocket_AppIcon_@144.png" class="icon bookmark-icon"/>https://getpocket.com/home</div></div></a></figure><ul id="1e92ec7d-2bab-808b-b8b6-e6cdb45c1068" class="bulleted-list"><li style="list-style-type:disc">கூகுள் அலெடர்ட்ஸ் - </li></ul><figure id="1e92ec7d-2bab-80c7-b706-c3c24ff46078"><a href="https://www.google.co.in/alerts" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Alerts - Monitor the Web for interesting new content</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://www.google.co.in/alerts</div></div></a></figure><ul id="1e92ec7d-2bab-8019-bc86-d36b308c9ed9" class="bulleted-list"><li style="list-style-type:disc">கேன்வா - </li></ul><figure id="1e92ec7d-2bab-80ee-94c8-e4355c2345e0"><a href="https://www.canva.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Canva: Visual Suite for Everyone</div><div class="bookmark-description">Canva is a free-to-use online graphic design tool. Use it to create social media posts, presentations, posters, videos, logos and more.</div></div><div class="bookmark-href"><img src="https://static.canva.com/static/images/android-192x192-2.png" class="icon bookmark-icon"/>https://www.canva.com/</div></div><img src="https://content-management-files.canva.com/c37135f6-6d9a-4920-b659-4f5e12698b8d/og-image-global-1200x630.jpg" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-809f-95a1-ee8235e373c4" class="bulleted-list"><li style="list-style-type:disc"><del>பெரிஸ்கோப் </del></li></ul><ul id="1e92ec7d-2bab-80b4-90b6-e0f7e3dcebed" class="bulleted-list"><li style="list-style-type:disc">பிட்.லை - <figure id="1e92ec7d-2bab-809d-b27a-e91b45b6b917"><a href="https://bitly.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Bitly Connections Platform | Short URLs, QR Codes, and More</div><div class="bookmark-description">Bitly’s Connections Platform is more than a free URL shortener, with robust link management software, advanced QR Code features, and a landing page solution.</div></div><div class="bookmark-href"><img src="https://docrdsfx76ssb.cloudfront.net/static/1745531555/pages/wp-content/uploads/2019/02/favicon.ico" class="icon bookmark-icon"/>https://bitly.com/</div></div><img src="https://docrdsfx76ssb.cloudfront.net/static/1745531555/pages/wp-content/uploads/2024/05/hero-img_desktop@2x.png" class="bookmark-image"/></a></figure></li></ul><hr id="1e92ec7d-2bab-8075-96dd-f8b01997de6a"/><p id="1e92ec7d-2bab-80db-a9f2-c87b893a7677" class="">
+</p><p id="1e92ec7d-2bab-8054-8884-d74e82269c86" class=""><strong>செய்தி வளங்கள்</strong></p><ul id="1e92ec7d-2bab-80b7-8cf9-d86e06521237" class="bulleted-list"><li style="list-style-type:disc">கூகுள்மேப்ஸ்மேனியா - </li></ul><figure id="1e92ec7d-2bab-80d8-8e4d-da876a7a9b1a"><a href="https://googlemapsmania.blogspot.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Maps Mania</div><div class="bookmark-description">Maps Mania is a blog dedicated to tracking the very best digital interactive maps on the internet and the tools used to create them.</div></div><div class="bookmark-href"><img src="https://googlemapsmania.blogspot.com/favicon.ico" class="icon bookmark-icon"/>https://googlemapsmania.blogspot.com/</div></div></a></figure><ul id="1e92ec7d-2bab-803a-a15c-c5ae5588e163" class="bulleted-list"><li style="list-style-type:disc">சேஞ்.ஆர்க் - </li></ul><figure id="1e92ec7d-2bab-8031-92e1-fd6a88de5662"><a href="https://www.change.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Change starts here</div><div class="bookmark-description">Join over 500,000,000 people creating real change in their communities.</div></div><div class="bookmark-href"><img src="https://static.change.org/favicons/favicon-114x114.png" class="icon bookmark-icon"/>https://www.change.org/</div></div><img src="https://static.change.org/favicon/favicon-400x400.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-809d-9716-ea2b589861b1" class="bulleted-list"><li style="list-style-type:disc">பிராடக்ட் ஹண்ட் - </li></ul><figure id="1e92ec7d-2bab-808f-b8e2-e49a44c4f0d1"><a href="https://www.producthunt.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Product Hunt – The best new products in tech.</div><div class="bookmark-description">Product Hunt is a curation of the best new products, every day. Discover the latest mobile apps, websites, and technology products that everyone&#x27;s talking about.</div></div><div class="bookmark-href"><img src="https://ph-static.imgix.net/ph-favicon-brand-500.ico?auto=format" class="icon bookmark-icon"/>https://www.producthunt.com/</div></div><img src="https://ph-static.imgix.net/ph-logo-1.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-80c7-9e38-ca6643dd650e" class="bulleted-list"><li style="list-style-type:disc">விக்கிலீக்ஸ் - </li></ul><figure id="1e92ec7d-2bab-8039-82f8-e4d8b1a165a9"><a href="https://wikileaks.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">WikiLeaks</div><div class="bookmark-description">Key fingerprint 9EF0 C41A FBA5 64AA 650A  0259 9C6D CD17 283E 454C</div></div><div class="bookmark-href"><img src="https://wikileaks.org/IMG/favicon.ico" class="icon bookmark-icon"/>https://wikileaks.org/</div></div></a></figure><ul id="1e92ec7d-2bab-8058-ac9e-e459fed43adf" class="bulleted-list"><li style="list-style-type:disc">இந்தியா ஸ்பெண்ட் - </li></ul><figure id="1e92ec7d-2bab-80b4-9fed-dd81b180f575"><a href="https://www.indiaspend.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">IndiaSpend: Data journalism, analysis on Indian economy, education, healthcare, agriculture, politics</div></div><div class="bookmark-href"><img src="https://www.indiaspend.com/images/ico/favicon.ico?v=1" class="icon bookmark-icon"/>https://www.indiaspend.com/</div></div><img src="https://www.indiaspend.com/h-upload/uid/3965GxQBk8tAT70zAqOlmoL8NkVQpnxUr3lt3161880" class="bookmark-image"/></a></figure><hr id="1e92ec7d-2bab-8033-9440-e1b3af566296"/><p id="1e92ec7d-2bab-8015-94bd-ff977535fa36" class="">
+</p><p id="1e92ec7d-2bab-800e-8c87-d70ddd6db658" class=""><strong>தகவல் சரி பார்ப்பு</strong></p><ul id="1e92ec7d-2bab-803d-85b5-c756436bf8a1" class="bulleted-list"><li style="list-style-type:disc">ஸ்னோப்ஸ் - </li></ul><figure id="1e92ec7d-2bab-8002-8018-ce12d92c72fb"><a href="https://www.snopes.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Snopes.com</div><div class="bookmark-description">The definitive Internet reference source for urban legends, folklore, myths, rumors, and misinformation.</div></div><div class="bookmark-href"><img src="https://www.snopes.com/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.snopes.com/</div></div><img src="https://mediaproxy.snopes.com/width/1200/https://www.snopes.com/tachyon/2019/11/2019-snopes-open-graph-default.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-80e0-8fc1-d96daee22dd4" class="bulleted-list"><li style="list-style-type:disc">நோயுவர்மீம்ஸ் - </li></ul><figure id="1e92ec7d-2bab-8016-818a-cebf12236579"><a href="https://knowyourmeme.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Know Your Meme</div></div><div class="bookmark-href"><img src="https://knowyourmeme.com/assets/favicon/apple-touch-icon.png" class="icon bookmark-icon"/>https://knowyourmeme.com/</div></div><img src="https://a.kym-cdn.com/assets/kym-logo-large-2be3f3818691470a0369e154647ca0f0.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-8002-8c1c-ee949284da64" class="bulleted-list"><li style="list-style-type:disc">டைனிஐ - </li></ul><figure id="1e92ec7d-2bab-8008-8b8e-c62bcdab3252"><a href="https://tineye.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TinEye Reverse Image Search</div></div><div class="bookmark-href"><img src="https://tineye.com/assets/touch_icons/touch-icon-192x192.png" class="icon bookmark-icon"/>https://tineye.com/</div></div></a></figure><ul id="1e92ec7d-2bab-8049-aeb0-e015648136e6" class="bulleted-list"><li style="list-style-type:disc">பேக்ட்செக்கர் - </li></ul><figure id="1e92ec7d-2bab-8059-aa32-dc6839e5e8aa"><a href="https://www.factchecker.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FactChecker.in is India&#x27;s first dedicated Fact Check initiative.</div></div><div class="bookmark-href"><img src="https://www.factchecker.in/images/ico/favicon.ico?v=1" class="icon bookmark-icon"/>https://www.factchecker.in/</div></div><img src="https://www.factchecker.in/images/logo.png" class="bookmark-image"/></a></figure><ul id="1e92ec7d-2bab-8095-9711-ed0e06f2e253" class="bulleted-list"><li style="list-style-type:disc">ட்ரூத் ஆர் பிக்‌ஷன் - </li></ul><figure id="1e92ec7d-2bab-806f-ad46-f6571669251d"><a href="https://www.truthorfiction.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Truth or Fiction?</div><div class="bookmark-description">Seeking truth, exposing fiction</div></div><div class="bookmark-href"><img src="https://dn.truthorfiction.com/wp-content/uploads/2018/10/26055010/cropped-tof-favicon-192x192.png" class="icon bookmark-icon"/>https://www.truthorfiction.com/</div></div></a></figure><p id="1e92ec7d-2bab-8034-a769-e9a15d771211" class="">
+</p><p id="1e92ec7d-2bab-806b-81b4-fc5290be7b02" class="">
+</p><p id="1e92ec7d-2bab-80da-befe-df0c1f786722" class=""><strong>குறிப்பு</strong>: செய்தியாளர்களுக்கான 25 தளங்கள் எனும் அடிப்படையில், ஐந்து தலைப்புகளில் தளங்கள் வகைப்படுத்தட்டன. இவற்றில் செய்தி பிரிவில் ஐந்து தளங்கள் தேர்வு செய்யப்பட்டுள்ளன. செய்தி தளங்கள் எனும் பிரிவு பரந்து விரிந்தது என்பதால், இதற்கான விரிவான பட்டியலை தனியே பார்க்கலாம்.</p><p id="1e92ec7d-2bab-80a4-a8b7-f40f97676a86" class="">
+</p><p id="1e92ec7d-2bab-80ae-bba4-e52e2d633164" class="">இந்த ஐந்து தளங்களும் செய்தி தளங்களுக்கான அடையாளமாக விளங்குகின்றன. இவற்றுக்கு மாற்றும் உண்டு என்பதை மனதில் கொள்ள வேண்டும்.<br/><br/></p><p id="1e92ec7d-2bab-804f-beed-e0126df10de2" class="">செய்திகளை தெரிந்து கொள்வதற்கான ஒரு தளத்தை பரிந்துரைப்பது கடினம் என்றாலும், பிபிசி தளத்தை முதலில் கவனத்தில் கொள்ளலாம். பாரம்பரியம் மிக்கது, இதழியல் நுட்பங்கள் மற்றும் அறம் சார்ந்த கோட்பாடுகளை பின்பற்றக்கூடியது என்பதாலும், இணைய இதழியலில் முன்னோடியாக இருப்பதாலும் பிபிசி தளத்தை முதன்மையாக கருதலாம்.<br/><br/></p><p id="1e92ec7d-2bab-8050-b9c5-f9399d020e7e" class="">சர்வதேச செய்திகளையும், பரவலாக கவனிக்கப்படாத செய்திகளையும் அவற்றுக்கான நுணுக்கங்களுடன் அறிய பிபிசி உதவும்.</p><p id="1e92ec7d-2bab-80ef-b4fa-da869335a012" class="">
+</p><p id="1e92ec7d-2bab-8090-8431-eaea0b098e6a" class="">பிபிசி சிறந்த தளம் என்றாலும், இதன் மீதும் விமர்சனம் உண்டு. குறிப்பாக, பிரிட்டன் மன்னராட்சி தொடர்பான சார்பும், பாகுபாடும் செய்தி சேகரிப்பில் வெளிப்படுவதாக புகார்கள் சொல்லப்படுகின்றன. எனவே, பிபிசிக்கு மாற்று தளம் தேவைப்பட்டால், அல்ஜஸிராவை பரிசீலிக்கலாம். செய்தி நேர்த்தியிலும், நுட்பத்திலும் பிபிசிக்கு நிகரானது என்பதோடு, பிபிசி தவறவிடக்கூடிய கோணங்களில் சர்வதேச செய்தி பரப்பை நோக்க வழி செய்யும் தளம். பிபிசி போன்ற மேற்கத்திய ஊடகத்திற்கு மாற்றாக துவங்கப்பட்டது என்றாலும், கத்தார் நாட்டு அரசின் ஆதரவு கொண்டது என்பதால், இதிலும் சார்பு உண்டு என்பதை அறிய வேண்டும். இன்னொரு மாற்று செய்தி தளமாக சி.என்.என். தளத்தை பரிசீலிக்கலாம். அமெரிக்க ஊடகமான சி.என்.என். சில செய்திகளில் பிரகாசிக்க கூடியது. ஒரு சில செய்திகளிகளில் அமெரிக்க மற்றும் முதலாளித்துவ சார்பு வெளிப்படலாம்.</p><p id="1e92ec7d-2bab-80bc-afab-d028be9498fc" class="">
+</p><p id="1e92ec7d-2bab-8005-829f-e46f1a56e32f" class="">ஆகச்சிறந்த ஒற்றை செய்தி தளம் என ஒன்றை குறிப்பிடுவது கடினம். செய்தி தளங்களின் தன்மையை உணர்ந்து செய்திகளை அணுகுவது பயனாளிகளின் பொறுப்பு.</p><p id="1e92ec7d-2bab-8076-8cca-c418b43a82ca" class="">
+</p><p id="1e92ec7d-2bab-8030-a71c-f0e2a27ee1b3" class="">செய்திகளை தெரிந்து கொள்ள அணுக வேண்டிய தளங்களின் பட்டியலில் இரண்டாவதாக வருவது கார்டியன் நாளிதழ் தளம். செய்தி தளம் தவிர, நம்பகமான நாளிதழ் தேவை எனும் வகையில் கார்டியன் பட்டியலில் உள்ளது. இங்கிலாந்தில் இருந்து வெளியாகும் கார்டியன் நாளிதழ் இடதுசாரி தன்மை கொண்டிருந்தாலும், செய்திகளை அளிப்பதிலும், குறிப்பாக ஆழமான சிந்தனையைத்தூண்டும் வாசிப்பு தன்மை மிக்க கட்டுரைகளை அளிப்பதில் சிறந்தது. கட்டுரைகளில் கார்டியனின் தனிப்பட்ட பார்வையை உணரலாம். அதே பார்வையோடு, சமூக நலன் சார்ந்த செய்திகளை தேடி வெளியிடுவது இதன் கூடுதல் சிறப்பு.</p><p id="1e92ec7d-2bab-80e6-b6e4-fcded61418a4" class="">
+</p><p id="1e92ec7d-2bab-8069-99c9-e8bd583c5e7d" class="">கார்டியனுக்கு பதிலாக அமெரிக்காவின் நியூயார்க் டைம்ஸ் நாளிதழை நாடலாம்.<br/><br/></p><p id="1e92ec7d-2bab-8075-a346-d8e79d8264cc" class="">மூன்றாவதாக இடம் பெறும் பஸ்ஃபீட் இணைய யுகத்தின் செய்தி தளம். சுவாரஸ்யமானது, எனினும் நம்பகமானது என சொல்வதற்கில்லை. ஆனால், இதன் செய்தி அணுகுமுறை பாரம்பரிய செய்தி வடிவங்களில் இருந்து மாறுபட்டது. அந்த வகையில் கவனத்தில் கொள்ள வேண்டிய தளம். செய்திகளின் புதிய போக்கின் அடையாளம்.</p><p id="1e92ec7d-2bab-8029-8643-d7cdb1c71627" class=""><br/>( உண்மையில் யாஹு செய்திகள் இந்த இடத்தில் வர வேண்டும். இணைய உலகின் மூன்னோடி திரட்டி சேவை எனும் வகையில் யாஹூ<br/>செய்திகள் முக்கியமானது.)<br/></p><p id="1e92ec7d-2bab-8019-9053-e12effe5a7ce" class=""><br/>நான்காவது வரும் ஹேக்கர் நியூஸ், தொழில்நுட்ப பிரியர்களுக்கானது என்றாலும், இதன் வாசகர் பங்கேற்பு மற்றும் உரையாடல் தன்மை நிகரில்லாது. மாற்று சேவையாக ஸ்லேஷ்டாட் அல்லது பழைய ’டிக்’கை கருதலாம்.<br/></p><p id="1e92ec7d-2bab-8066-aafd-f96a71ada9f4" class=""><br/>ஐந்தாவது சேவை பிட் ஆப் நியூஸ், இப்போது பயன்பாட்டில் இல்லை. ஆனால் செய்தி சுருக்கம் அளிக்கும் சேவை என்ற வகையில் முக்கியமானது. இதன் செய்தி மடல் தன்மையும் முக்கியமானது.<br/></p><p id="1e92ec7d-2bab-80f5-b612-ed2e8e632a0f" class="">
+</p><p id="1e92ec7d-2bab-80af-9f50-cca26ed2a916" class="">
+</p><p id="1e92ec7d-2bab-8065-8b0f-d69baa05f9ee" class=""><strong>இதழியல் மாணவர்கள், இதழியல் ஆர்வம் கொண்டவர்க்ளுக்கான கையேட்டிற்கான அடிப்படை பட்டியல் இது. உங்கள் கருத்துககளை பகிரவும்.</strong></p><figure id="1e92ec7d-2bab-8045-9ae9-f2144d906dca" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>e</mi><mi>n</mi><mi>a</mi><mi>r</mi><mi>a</mi><mi>s</mi><mi>i</mi><mi>m</mi><mi>h</mi><mi>a</mi><mi>n</mi><mi mathvariant="normal">@</mi><mi>g</mi><mi>m</mi><mi>a</mi><mi>i</mi><mi>l</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>o</mi><mi>m</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mn>919677058746</mn></mrow><annotation encoding="application/x-tex">enarasimhan@gmail.com || +91 9677058746</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">e</span><span class="mord mathnormal">na</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal">imhan</span><span class="mord">@</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">mai</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">.</span><span class="mord mathnormal">co</span><span class="mord mathnormal">m</span><span class="mord">∣∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">919677058746</span></span></span></span></span></div></figure><p id="1e92ec7d-2bab-8083-b055-cf362d9f94c0" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
